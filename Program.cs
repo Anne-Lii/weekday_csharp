@@ -8,13 +8,20 @@ class Program //definierar huvudklassen med namnet Program
 
     static void Main(string[] args) //startpunkt main, startar med denna kod
     {
-        Console.WriteLine("Skriv ett datum (YYYY-MM-DD):");//uppmaning att skriva ett datum
+        Console.WriteLine("Skriv in ditt födelsedatum (YYYY-MM-DD):");//uppmaning att skriva ett datum
         string input = Console.ReadLine(); //inmatade datumet
 
         //omvandla input till ett giltigt datum
         if (!DateTime.TryParseExact(input, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime date))//kontrollerar formatet på inmatningen
         {
             Console.WriteLine("Felaktigt datum eller format YYYY-MM-DD");//felmeddelande vid fel format eller felaktigt datum
+            return;
+        }
+        
+        //kontroll att datumet har passerat
+        if (date > DateTime.Now)
+        {
+            Console.WriteLine("Detta är ett framtida datum. Ange ett datum som har passerat.");
             return;
         }
 
@@ -44,7 +51,7 @@ class Program //definierar huvudklassen med namnet Program
         //string med veckans dagar med index 1 till 7
         string[] weekdays = { "Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag", "Söndag" };
 
-        Console.WriteLine($"Detta datum {input} inträffar/inträffade på en {weekdays[weekday - 1]}.");  // -1 då index vanligtvis startar på 0  
+        Console.WriteLine($"Din födelsedag {input} inträffade på en {weekdays[weekday - 1]}.");  // -1 då index vanligtvis startar på 0  
     }
 }
 
