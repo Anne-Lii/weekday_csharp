@@ -37,10 +37,12 @@ class Program //definierar huvudklassen med namnet Program
 
        //uträkning av veckodag med Zellers algoritm
        //weekday = (d + ((13*(m+1))/5) + y + (y/4) + (c/4) + 5*c ) % 7;
-       int weekday = (day + (13 * (month + 1)) / 5 + yearOfCentury + (yearOfCentury / 4) + (century / 4) + (5 * century)) % 7; // ger resultat i tal 0 till 6 där 0 är lördag.
+       int weekday = (day + ((13 * (month + 1)) / 5) + yearOfCentury + (yearOfCentury / 4) + (century / 4) + (5 * century)) % 7; // ger resultat i tal 0 till 6 där 0 är lördag.
 
+        //konvertera veckodag till ISO standard
+        //dayOfWeek = ( ( dayOfWeek + 5 ) mod 7 ) + 1
+        weekday = ((weekday + 5) % 7) + 1;
         Console.WriteLine(weekday);
-
 
     }
 }
