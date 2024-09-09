@@ -11,39 +11,40 @@ class Program //definierar huvudklassen med namnet Program
         Console.WriteLine("Skriv ett datum (YYYY-MM-DD):");//uppmaning att skriva ett datum
         string input = Console.ReadLine(); //inmatade datumet
 
-        Console.WriteLine("Detta är det inmatade datumet: " + input);
-
-       //parsa input till ett giltigt datum
-       if (!DateTime.TryParseExact(input, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime date))
-       {
+        //parsa input till ett giltigt datum
+        if (!DateTime.TryParseExact(input, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime date))
+        {
             Console.WriteLine("Felaktigt datum eller format YYYY-MM-DD");//felmeddelande vid fel format eller felaktigt datum
             return;
-       }
+        }
 
-       int year = date.Year; // inmatat år
-       int month = date.Month; // inmatad månad
-       int day= date.Day; // inmatad dag
+        int year = date.Year; // inmatat år
+        int month = date.Month; // inmatad månad
+        int day = date.Day; // inmatad dag
+
+        //räkna ut århundrade och året inom århundradet
+        int century = year / 100 ; //räknar ut århundrade
+        int yearOfCentury = year % 100; //modulusoperatorn för att få fram året inom seklet
 
         //justera enligt Zellers algoritm. Om januari(1) och februari(2) lägg till 12 på månadsnumret och ta bort ett år
-       if (month < 3)
-       {
-        month += 12;
-        year -= 1;
-       }
+        if (month < 3)
+        {
+            month += 12;
+            year -= 1;
+        }
 
-       //räkna ut århundrade och året inom århundradet
-       int century = year / 100; //räknar ut århundrade
-       int yearOfCentury = year % 100; //modulusoperatorn för att få fram året inom seklet
+        //uträkning av veckodag med Zellers algoritm
+        //weekday = (d + ((13*(m+1))/5) + y + (y/4) + (c/4) + 5*c ) % 7;
+        int weekday = (day + ((13 * (month + 1)) / 5) + yearOfCentury + (yearOfCentury / 4) + (century / 4) + (5 * century)) % 7; // ger resultat i tal 0 till 6 där 0 är lördag.
 
-       //uträkning av veckodag med Zellers algoritm
-       //weekday = (d + ((13*(m+1))/5) + y + (y/4) + (c/4) + 5*c ) % 7;
-       int weekday = (day + ((13 * (month + 1)) / 5) + yearOfCentury + (yearOfCentury / 4) + (century / 4) + (5 * century)) % 7; // ger resultat i tal 0 till 6 där 0 är lördag.
-
-        //konvertera veckodag till ISO standard
+        //konvertera veckodag till ISO standard alltså måndag = 1 och söndag = 7 enligt beskrivning
         //dayOfWeek = ( ( dayOfWeek + 5 ) mod 7 ) + 1
         weekday = ((weekday + 5) % 7) + 1;
-        Console.WriteLine(weekday);
 
+        //string med veckans dagar med index 1 till 7
+        string[] weekdays = { "Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag", "Söndag" };
+
+        Console.WriteLine($"Detta datum {input} inträffar/inträffade på en {weekdays[weekday - 1]}.");  // -1 då index vanligtvis startar på 0  
     }
 }
 
