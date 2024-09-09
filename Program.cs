@@ -11,8 +11,8 @@ class Program //definierar huvudklassen med namnet Program
         Console.WriteLine("Skriv ett datum (YYYY-MM-DD):");//uppmaning att skriva ett datum
         string input = Console.ReadLine(); //inmatade datumet
 
-        //parsa input till ett giltigt datum
-        if (!DateTime.TryParseExact(input, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime date))
+        //omvandla input till ett giltigt datum
+        if (!DateTime.TryParseExact(input, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime date))//kontrollerar formatet på inmatningen
         {
             Console.WriteLine("Felaktigt datum eller format YYYY-MM-DD");//felmeddelande vid fel format eller felaktigt datum
             return;
