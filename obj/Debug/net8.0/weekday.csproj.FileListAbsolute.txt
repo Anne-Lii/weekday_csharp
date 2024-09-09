@@ -1,0 +1,15 @@
+C:\mittuniversitetet\csharpdotnet\moment2\moment2_1\weekday\bin\Debug\net8.0\weekday.exe
+C:\mittuniversitetet\csharpdotnet\moment2\moment2_1\weekday\bin\Debug\net8.0\weekday.deps.json
+C:\mittuniversitetet\csharpdotnet\moment2\moment2_1\weekday\bin\Debug\net8.0\weekday.runtimeconfig.json
+C:\mittuniversitetet\csharpdotnet\moment2\moment2_1\weekday\bin\Debug\net8.0\weekday.dll
+C:\mittuniversitetet\csharpdotnet\moment2\moment2_1\weekday\bin\Debug\net8.0\weekday.pdb
+C:\mittuniversitetet\csharpdotnet\moment2\moment2_1\weekday\obj\Debug\net8.0\weekday.GeneratedMSBuildEditorConfig.editorconfig
+C:\mittuniversitetet\csharpdotnet\moment2\moment2_1\weekday\obj\Debug\net8.0\weekday.AssemblyInfoInputs.cache
+C:\mittuniversitetet\csharpdotnet\moment2\moment2_1\weekday\obj\Debug\net8.0\weekday.AssemblyInfo.cs
+C:\mittuniversitetet\csharpdotnet\moment2\moment2_1\weekday\obj\Debug\net8.0\weekday.csproj.CoreCompileInputs.cache
+C:\mittuniversitetet\csharpdotnet\moment2\moment2_1\weekday\obj\Debug\net8.0\weekday.sourcelink.json
+C:\mittuniversitetet\csharpdotnet\moment2\moment2_1\weekday\obj\Debug\net8.0\weekday.dll
+C:\mittuniversitetet\csharpdotnet\moment2\moment2_1\weekday\obj\Debug\net8.0\refint\weekday.dll
+C:\mittuniversitetet\csharpdotnet\moment2\moment2_1\weekday\obj\Debug\net8.0\weekday.pdb
+C:\mittuniversitetet\csharpdotnet\moment2\moment2_1\weekday\obj\Debug\net8.0\weekday.genruntimeconfig.cache
+C:\mittuniversitetet\csharpdotnet\moment2\moment2_1\weekday\obj\Debug\net8.0\ref\weekday.dll
